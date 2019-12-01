@@ -82,9 +82,11 @@ WSGI_APPLICATION = 'sample_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': 'mysql_settings.py',
-        },
+        'NAME': 'django',
+        'USER': 'docker',
+        'PASSWORD': 'docker',
+        'HOST': 'mysql_host',
+        'PORT': '3306',
     }
 }
 
