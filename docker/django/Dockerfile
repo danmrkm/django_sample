@@ -3,6 +3,6 @@ ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /code
 WORKDIR /code
-ADD ./docker/django/requirements.txt /code/
+ADD requirements.txt /code/
 RUN pip install -r requirements.txt
-ADD ./docker/django/ /code/
+ADD ./sample_project /code/
