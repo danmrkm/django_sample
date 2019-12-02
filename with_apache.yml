@@ -10,6 +10,6 @@ services:
       chmod u+x ./wait-for-it.sh &&
       ./wait-for-it.sh mysql_host:3306 -t 30 &&
       a2enconf django_sample.conf &&
-      python manage.py runserver 0.0.0.0:8080"
+      apachectl -D FOREGROUND"
     ports:
       - "80:80"
