@@ -1,7 +1,9 @@
 FROM python:3.8.0
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /code && apt-get update && apt-get -y install apache2 curl
+RUN mkdir /code && apt-get update && apt-get -y install apache2 apache2-dev curl
+
+COPY ./apache2_conf/ /etc/apache2/conf-available/
 
 WORKDIR /code
 ADD requirements.txt /code/
