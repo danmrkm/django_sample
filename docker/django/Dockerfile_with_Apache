@@ -1,11 +1,11 @@
 FROM python:3.8.0
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /code && apt-get update && apt-get -y install apache2 apache2-dev curl
+RUN mkdir /code && apt-get update && apt-get -y install apache2 apache2-dev curl rsyslog
 
 COPY ./apache2_conf/ /etc/apache2/conf-available/
 
 WORKDIR /code
 ADD requirements.txt /code/
-RUN pip install -r requirements.txt
+RUN pip install -r requirements_with_Apache.txt
 ADD ./sample_project /code/

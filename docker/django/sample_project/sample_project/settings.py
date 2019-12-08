@@ -25,7 +25,9 @@ SECRET_KEY = 'i==zer4clm02$oa)pxiex7(n&p#0$m__v#=(!zp!89vof9o3mw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+SITE_ID = 1
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,6 +89,9 @@ DATABASES = {
         'PASSWORD': 'docker',
         'HOST': 'mysql_host',
         'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'TRADITIONAL,NO_AUTO_VALUE_ON_ZERO',
+        }
     }
 }
 
